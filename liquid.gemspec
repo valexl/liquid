@@ -5,7 +5,7 @@ $:.unshift lib unless $:.include?(lib)
 require "liquid/version"
 
 Gem::Specification.new do |s|
-  s.name        = "liquid"
+  s.name        = "liquidv2"
   s.version     = LiquidV2::VERSION
   s.platform    = Gem::Platform::RUBY
   s.summary     = "A secure, non-evaling end user template engine with aesthetic markup."
