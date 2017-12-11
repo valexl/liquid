@@ -7,7 +7,7 @@ module SecurityFilter
 end
 
 class SecurityTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def test_no_instance_eval
     text = %( {{ '1+1' | instance_eval }} )

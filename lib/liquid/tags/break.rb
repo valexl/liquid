@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
 
   # Break tag to be used to break out of a for loop.
   #

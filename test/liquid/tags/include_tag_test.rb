@@ -49,10 +49,10 @@ class CountingFileSystem
 end
 
 class IncludeTagTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def setup
-    Liquid::Template.file_system = TestFileSystem.new
+    LiquidV2::Template.file_system = TestFileSystem.new
   end
 
   def test_include_tag_looks_for_file_system_in_registers_first
@@ -118,9 +118,9 @@ class IncludeTagTest < Test::Unit::TestCase
       end
     end
 
-    Liquid::Template.file_system = infinite_file_system.new
+    LiquidV2::Template.file_system = infinite_file_system.new
 
-    assert_raise(Liquid::StackLevelError) do
+    assert_raise(LiquidV2::StackLevelError) do
       Template.parse("{% include 'loop' %}").render!
     end
 
@@ -133,7 +133,7 @@ class IncludeTagTest < Test::Unit::TestCase
       end
     end
 
-    Liquid::Template.file_system = infinite_file_system.new
+    LiquidV2::Template.file_system = infinite_file_system.new
 
     Template.parse("{% include 'hi_mom' %}").render!
   end

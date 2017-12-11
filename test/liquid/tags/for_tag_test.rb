@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ForTagTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def test_for
     assert_template_result(' yo  yo  yo  yo ','{%for item in array%} yo {%endfor%}','array' => [1,2,3,4])
@@ -283,8 +283,8 @@ HERE
   end
 
   def test_bad_variable_naming_in_for_loop
-    assert_raise(Liquid::SyntaxError) do
-      Liquid::Template.parse('{% for a/b in x %}{% endfor %}')
+    assert_raise(LiquidV2::SyntaxError) do
+      LiquidV2::Template.parse('{% for a/b in x %}{% endfor %}')
     end
   end
 

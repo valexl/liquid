@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
 
   # Include allows templates to relate with other templates
   #
@@ -68,14 +68,14 @@ module Liquid
           return cached
         end
         source = read_template_from_file_system(context)
-        partial = Liquid::Template.parse(source)
+        partial = LiquidV2::Template.parse(source)
         cached_partials[template_name] = partial
         context.registers[:cached_partials] = cached_partials
         partial
       end
 
       def read_template_from_file_system(context)
-        file_system = context.registers[:file_system] || Liquid::Template.file_system
+        file_system = context.registers[:file_system] || LiquidV2::Template.file_system
 
         # make read_template_file call backwards-compatible.
         case file_system.method(:read_template_file).arity

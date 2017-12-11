@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class StrainerTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   module AccessScopeFilters
     def public_filter

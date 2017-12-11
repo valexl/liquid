@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class HtmlTagTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
-  class ArrayDrop < Liquid::Drop
+  class ArrayDrop < LiquidV2::Drop
     include Enumerable
 
     def initialize(array)

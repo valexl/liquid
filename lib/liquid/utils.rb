@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
   module Utils
     def self.slice_collection_using_each(collection, from, to)
       segments = []

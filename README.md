@@ -39,11 +39,11 @@ Liquid is a template engine which was written with very specific requirements:
 
 ## How to use Liquid
 
-Liquid supports a very simple API based around the Liquid::Template class.
+Liquid supports a very simple API based around the LiquidV2::Template class.
 For standard use you can just pass it the content of a file and call render with a parameters hash.
 
 ```ruby
-@template = Liquid::Template.parse("hi {{name}}") # Parses and compiles the template
+@template = LiquidV2::Template.parse("hi {{name}}") # Parses and compiles the template
 @template.render('name' => 'tobi')                # => "hi tobi"
 ```
 

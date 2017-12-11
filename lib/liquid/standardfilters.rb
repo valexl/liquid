@@ -1,7 +1,7 @@
 require 'cgi'
 require 'bigdecimal'
 
-module Liquid
+module LiquidV2
 
   module StandardFilters
 

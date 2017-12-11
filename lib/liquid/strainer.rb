@@ -1,6 +1,6 @@
 require 'set'
 
-module Liquid
+module LiquidV2
 
   # Strainer is the parent class for the filters system.
   # New filters are mixed into the strainer class which is then instantiated for each liquid template render run.

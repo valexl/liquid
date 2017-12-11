@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
 
   # Context keeps the variable stack and resolves variables, as well as keywords
   #
@@ -118,7 +118,7 @@ module Liquid
       @scopes[0] = {}
     end
 
-    # Only allow String, Numeric, Hash, Array, Proc, Boolean or <tt>Liquid::Drop</tt>
+    # Only allow String, Numeric, Hash, Array, Proc, Boolean or <tt>LiquidV2::Drop</tt>
     def []=(key, value)
       @scopes[0][key] = value
     end

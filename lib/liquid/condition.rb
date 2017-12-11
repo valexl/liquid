@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
   # Container for liquid nodes which conveniently wraps decision making logic
   #
   # Example:

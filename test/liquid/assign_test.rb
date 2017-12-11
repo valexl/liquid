@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AssignTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def test_assigned_variable
     assert_template_result('.foo.',

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TemplateContextDrop < Liquid::Drop
+class TemplateContextDrop < LiquidV2::Drop
   def before_method(method)
     method
   end
@@ -15,7 +15,7 @@ class TemplateContextDrop < Liquid::Drop
 end
 
 class TemplateTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def test_tokenize_strings
     assert_equal [' '], Template.new.send(:tokenize, ' ')

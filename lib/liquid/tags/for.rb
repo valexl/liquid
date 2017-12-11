@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
 
   # "For" iterates over an array or collection.
   # Several useful variables are available to you within the loop.

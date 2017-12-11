@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class Filters
-  include Liquid::StandardFilters
+  include LiquidV2::StandardFilters
 end
 
 class TestThing
@@ -21,14 +21,14 @@ class TestThing
   end
 end
 
-class TestDrop < Liquid::Drop
+class TestDrop < LiquidV2::Drop
   def test
     "testfoo"
   end
 end
 
 class StandardFiltersTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def setup
     @filters = Filters.new
@@ -119,20 +119,20 @@ class StandardFiltersTest < Test::Unit::TestCase
   end
 
   def test_map_doesnt_call_arbitrary_stuff
-    assert_equal "", Liquid::Template.parse('{{ "foo" | map: "__id__" }}').render
-    assert_equal "", Liquid::Template.parse('{{ "foo" | map: "inspect" }}').render
+    assert_equal "", LiquidV2::Template.parse('{{ "foo" | map: "__id__" }}').render
+    assert_equal "", LiquidV2::Template.parse('{{ "foo" | map: "inspect" }}').render
   end
 
   def test_map_calls_to_liquid
     t = TestThing.new
-    assert_equal "woot: 1", Liquid::Template.parse('{{ foo }}').render("foo" => t)
+    assert_equal "woot: 1", LiquidV2::Template.parse('{{ foo }}').render("foo" => t)
   end
 
   def test_map_over_proc
     drop = TestDrop.new
     p = Proc.new{ drop }
     templ = '{{ procs | map: "test" }}'
-    assert_equal "testfoo", Liquid::Template.parse(templ).render("procs" => [p])
+    assert_equal "testfoo", LiquidV2::Template.parse(templ).render("procs" => [p])
   end
 
   def test_date

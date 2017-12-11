@@ -1,6 +1,6 @@
 require 'set'
 
-module Liquid
+module LiquidV2
 
   # A drop in liquid is a class which allows you to export DOM like things to liquid.
   # Methods of drops are callable.
@@ -10,13 +10,13 @@ module Liquid
   #
   # Example:
   #
-  #   class ProductDrop < Liquid::Drop
+  #   class ProductDrop < LiquidV2::Drop
   #     def top_sales
   #       Shop.current.products.find(:all, :order => 'sales', :limit => 10 )
   #     end
   #   end
   #
-  #   tmpl = Liquid::Template.parse( ' {% for product in product.top_sales %} {{ product.name }} {%endfor%} '  )
+  #   tmpl = LiquidV2::Template.parse( ' {% for product in product.top_sales %} {{ product.name }} {%endfor%} '  )
   #   tmpl.render('product' => ProductDrop.new ) # will invoke top_sales query.
   #
   # Your drop can either implement the methods sans any parameters or implement the before_method(name) method which is a
@@ -54,7 +54,7 @@ module Liquid
 
     # Check for method existence without invoking respond_to?, which creates symbols
     def self.invokable?(method_name)
-      @invokable_methods ||= Set.new(["to_liquid"] + (public_instance_methods - Liquid::Drop.public_instance_methods).map(&:to_s))
+      @invokable_methods ||= Set.new(["to_liquid"] + (public_instance_methods - LiquidV2::Drop.public_instance_methods).map(&:to_s))
       @invokable_methods.include?(method_name.to_s)
     end
   end

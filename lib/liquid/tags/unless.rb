@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/if'
 
-module Liquid
+module LiquidV2
 
   # Unless is a conditional just like 'if' but works on the inverse logic.
   #

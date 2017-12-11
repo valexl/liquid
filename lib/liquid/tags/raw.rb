@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
   class Raw < Block
     FullTokenPossiblyInvalid = /^(.*)#{TagStart}\s*(\w+)\s*(.*)?#{TagEnd}$/o
 

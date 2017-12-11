@@ -37,7 +37,7 @@ class TestClassC::LiquidDropClass
 end
 
 class ModuleExTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def setup
     @a = TestClassA.new
@@ -77,11 +77,11 @@ class ModuleExTest < Test::Unit::TestCase
   end
 
   def test_should_use_regular_objects_as_drops
-    assert_equal 'allowedA', Liquid::Template.parse("{{ a.allowedA }}").render('a'=>@a)
-    assert_equal 'allowedB', Liquid::Template.parse("{{ a.chainedB.allowedB }}").render('a'=>@a)
-    assert_equal 'allowedC', Liquid::Template.parse("{{ a.chainedB.chainedC.allowedC }}").render('a'=>@a)
-    assert_equal 'another_allowedC', Liquid::Template.parse("{{ a.chainedB.chainedC.another_allowedC }}").render('a'=>@a)
-    assert_equal '', Liquid::Template.parse("{{ a.restricted }}").render('a'=>@a)
-    assert_equal '', Liquid::Template.parse("{{ a.unknown }}").render('a'=>@a)
+    assert_equal 'allowedA', LiquidV2::Template.parse("{{ a.allowedA }}").render('a'=>@a)
+    assert_equal 'allowedB', LiquidV2::Template.parse("{{ a.chainedB.allowedB }}").render('a'=>@a)
+    assert_equal 'allowedC', LiquidV2::Template.parse("{{ a.chainedB.chainedC.allowedC }}").render('a'=>@a)
+    assert_equal 'another_allowedC', LiquidV2::Template.parse("{{ a.chainedB.chainedC.another_allowedC }}").render('a'=>@a)
+    assert_equal '', LiquidV2::Template.parse("{{ a.restricted }}").render('a'=>@a)
+    assert_equal '', LiquidV2::Template.parse("{{ a.unknown }}").render('a'=>@a)
   end
 end # ModuleExTest

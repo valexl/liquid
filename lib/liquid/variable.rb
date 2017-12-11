@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
 
   # Holds variables. Variables are only loaded "just in time"
   # and are not evaluated as part of the render stage

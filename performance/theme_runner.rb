@@ -43,9 +43,9 @@ class ThemeRunner
 
     @tests.each do |liquid, layout, template_name|
 
-      tmpl = Liquid::Template.new
+      tmpl = LiquidV2::Template.new
       tmpl.parse(liquid)
-      tmpl = Liquid::Template.new
+      tmpl = LiquidV2::Template.new
       tmpl.parse(layout)
     end
   end
@@ -100,7 +100,7 @@ class ThemeRunner
   end
 
   def compile_and_render(template, layout, assigns, page_template, template_file)
-    tmpl = Liquid::Template.new
+    tmpl = LiquidV2::Template.new
     tmpl.assigns['page_title'] = 'Page title'
     tmpl.assigns['template'] = page_template
     tmpl.registers[:file_system] = ThemeRunner::FileSystem.new(File.dirname(template_file))

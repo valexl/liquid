@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
   # A Liquid file system is a way to let your templates retrieve other templates for use with the include tag.
   #
   # You can implement subclasses that retrieve templates from the database, from the file system using a different
@@ -8,8 +8,8 @@ module Liquid
   #
   # Example:
   #
-  # Liquid::Template.file_system = Liquid::LocalFileSystem.new(template_path)
-  # liquid = Liquid::Template.parse(template)
+  # LiquidV2::Template.file_system = LiquidV2::LocalFileSystem.new(template_path)
+  # liquid = LiquidV2::Template.parse(template)
   #
   # This will parse the template with a LocalFileSystem implementation rooted at 'template_path'.
   class BlankFileSystem
@@ -26,7 +26,7 @@ module Liquid
   #
   # Example:
   #
-  # file_system = Liquid::LocalFileSystem.new("/some/path")
+  # file_system = LiquidV2::LocalFileSystem.new("/some/path")
   #
   # file_system.full_path("mypartial")       # => "/some/path/_mypartial.liquid"
   # file_system.full_path("dir/mypartial")   # => "/some/path/dir/_mypartial.liquid"

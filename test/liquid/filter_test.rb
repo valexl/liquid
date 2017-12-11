@@ -23,7 +23,7 @@ module SubstituteFilter
 end
 
 class FiltersTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def setup
     @context = Context.new
@@ -108,7 +108,7 @@ class FiltersTest < Test::Unit::TestCase
 end
 
 class FiltersInTemplate < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def test_local_global
     Template.register_filter(MoneyFilter)

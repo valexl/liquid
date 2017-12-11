@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class StatementsTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def test_true_eql_true
     text = %| {% if true == true %} true {% else %} false {% endif %} |

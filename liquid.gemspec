@@ -6,7 +6,7 @@ require "liquid/version"
 
 Gem::Specification.new do |s|
   s.name        = "liquid"
-  s.version     = Liquid::VERSION
+  s.version     = LiquidV2::VERSION
   s.platform    = Gem::Platform::RUBY
   s.summary     = "A secure, non-evaling end user template engine with aesthetic markup."
   s.authors     = ["Tobias Luetke"]

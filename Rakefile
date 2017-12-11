@@ -17,14 +17,14 @@ task :build do
 end
 
 task :install => :build do
-  system "gem install liquid-#{Liquid::VERSION}.gem"
+  system "gem install liquid-#{LiquidV2::VERSION}.gem"
 end
 
 task :release => :build do
-  system "git tag -a v#{Liquid::VERSION} -m 'Tagging #{Liquid::VERSION}'"
+  system "git tag -a v#{LiquidV2::VERSION} -m 'Tagging #{LiquidV2::VERSION}'"
   system "git push --tags"
-  system "gem push liquid-#{Liquid::VERSION}.gem"
-  system "rm liquid-#{Liquid::VERSION}.gem"
+  system "gem push liquid-#{LiquidV2::VERSION}.gem"
+  system "rm liquid-#{LiquidV2::VERSION}.gem"
 end
 
 namespace :benchmark do

@@ -6,7 +6,7 @@ class HundredCentes
   end
 end
 
-class CentsDrop < Liquid::Drop
+class CentsDrop < LiquidV2::Drop
   def amount
     HundredCentes.new
   end
@@ -16,13 +16,13 @@ class CentsDrop < Liquid::Drop
   end
 end
 
-class ContextSensitiveDrop < Liquid::Drop
+class ContextSensitiveDrop < LiquidV2::Drop
   def test
     @context['test']
   end
 end
 
-class Category < Liquid::Drop
+class Category < LiquidV2::Drop
   attr_accessor :name
 
   def initialize(name)
@@ -41,7 +41,7 @@ class CategoryDrop
   end
 end
 
-class CounterDrop < Liquid::Drop
+class CounterDrop < LiquidV2::Drop
   def count
     @count ||= 0
     @count += 1
@@ -64,10 +64,10 @@ class ArrayLike
 end
 
 class ContextTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   def setup
-    @context = Liquid::Context.new
+    @context = LiquidV2::Context.new
   end
 
   def test_variables
@@ -108,11 +108,11 @@ class ContextTest < Test::Unit::TestCase
       @context.pop
     end
 
-    assert_raise(Liquid::ContextError) do
+    assert_raise(LiquidV2::ContextError) do
       @context.pop
     end
 
-    assert_raise(Liquid::ContextError) do
+    assert_raise(LiquidV2::ContextError) do
       @context.push
       @context.pop
       @context.pop

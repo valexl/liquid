@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
 
   # Templates are central to liquid.
   # Interpretating templates is a two step process. First you compile the
@@ -10,7 +10,7 @@ module Liquid
   #
   # Example:
   #
-  #   template = Liquid::Template.parse(source)
+  #   template = LiquidV2::Template.parse(source)
   #   template.render('user_name' => 'bob')
   #
   class Template
@@ -91,9 +91,9 @@ module Liquid
       return '' if @root.nil?
 
       context = case args.first
-      when Liquid::Context
+      when LiquidV2::Context
         args.shift
-      when Liquid::Drop
+      when LiquidV2::Drop
         drop = args.shift
         drop.context = Context.new([drop, assigns], instance_assigns, registers, @rethrow_errors, @resource_limits)
       when Hash
@@ -101,7 +101,7 @@ module Liquid
       when nil
         Context.new(assigns, instance_assigns, registers, @rethrow_errors, @resource_limits)
       else
-        raise ArgumentError, "Expect Hash or Liquid::Context as parameter"
+        raise ArgumentError, "Expect Hash or LiquidV2::Context as parameter"
       end
 
       case args.last
@@ -127,7 +127,7 @@ module Liquid
         # for performance reasons we get an array back here. join will make a string out of it.
         result = @root.render(context)
         result.respond_to?(:join) ? result.join : result
-      rescue Liquid::MemoryError => e
+      rescue LiquidV2::MemoryError => e
         context.handle_error(e)
       ensure
         @errors = context.errors
@@ -140,7 +140,7 @@ module Liquid
 
     private
 
-    # Uses the <tt>Liquid::TemplateParser</tt> regexp to tokenize the passed source
+    # Uses the <tt>LiquidV2::TemplateParser</tt> regexp to tokenize the passed source
     def tokenize(source)
       source = source.source if source.respond_to?(:source)
       return [] if source.to_s.empty?

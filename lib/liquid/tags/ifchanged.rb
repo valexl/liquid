@@ -1,4 +1,4 @@
-module Liquid
+module LiquidV2
   class Ifchanged < Block
 
     def render(context)

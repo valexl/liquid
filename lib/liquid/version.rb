@@ -1,4 +1,4 @@
 # encoding: utf-8
-module Liquid
+module LiquidV2
   VERSION = "2.6.3"
 end

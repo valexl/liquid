@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ContinueTagTest < Test::Unit::TestCase
-  include Liquid
+  include LiquidV2
 
   # tests that no weird errors are raised if continue is called outside of a
   # block
