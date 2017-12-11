@@ -2,7 +2,7 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require "liquid/version"
+require "liquidv2/version"
 
 Gem::Specification.new do |s|
   s.name        = "liquidv2"

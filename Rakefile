@@ -1,7 +1,7 @@
 require 'rake'
 require 'rake/testtask'
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require "liquid/version"
+require "liquidv2/version"
 
 task :default => 'test'
 

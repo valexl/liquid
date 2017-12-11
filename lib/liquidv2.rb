@@ -45,24 +45,24 @@ module LiquidV2
   VariableParser              = /\[[^\]]+\]|#{VariableSegment}+\??/o
 end
 
-require "liquid/version"
-require 'liquid/drop'
-require 'liquid/extensions'
-require 'liquid/errors'
-require 'liquid/interrupts'
-require 'liquid/strainer'
-require 'liquid/context'
-require 'liquid/tag'
-require 'liquid/block'
-require 'liquid/document'
-require 'liquid/variable'
-require 'liquid/file_system'
-require 'liquid/template'
-require 'liquid/htmltags'
-require 'liquid/standardfilters'
-require 'liquid/condition'
-require 'liquid/module_ex'
-require 'liquid/utils'
+require "liquidv2/version"
+require 'liquidv2/drop'
+require 'liquidv2/extensions'
+require 'liquidv2/errors'
+require 'liquidv2/interrupts'
+require 'liquidv2/strainer'
+require 'liquidv2/context'
+require 'liquidv2/tag'
+require 'liquidv2/block'
+require 'liquidv2/document'
+require 'liquidv2/variable'
+require 'liquidv2/file_system'
+require 'liquidv2/template'
+require 'liquidv2/htmltags'
+require 'liquidv2/standardfilters'
+require 'liquidv2/condition'
+require 'liquidv2/module_ex'
+require 'liquidv2/utils'
 
 # Load all the tags of the standard library
 #
